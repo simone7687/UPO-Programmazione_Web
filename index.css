@@ -1,8 +1,35 @@
 
-central_title
+h2
 {
     color: rgb(196, 17, 17);
-    font-size: xx-large;
     font-weight: bold;
     font-family: "Lucida Console", Monaco, monospace;
 }
+
+/* background color */
+body {background-color: white;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+  }
+  
+  /* align to the left */
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111111;
+  }
