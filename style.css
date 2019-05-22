@@ -1,0 +1,61 @@
+/* background color */
+body
+{
+    background-color: white;
+}
+
+#header
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+}
+#header img 
+{
+    margin-left: 1%;
+}
+#header h1
+{
+    margin-left: 20%;
+}
+
+/*arrotondato*/
+#navbar
+{
+    margin-right: 3%;
+    margin-left: 3%;
+}
+#navbar ul
+{
+    display: block;
+    border-radius:25px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+/* align to the left */
+#navbar ul li
+{
+    float: left;
+}
+/*attivo*/
+#navbar ul li a.active
+{
+    background-color: #4CAF50;
+}
+#navbar ul a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    
+}
+#navbar ul li a:hover
+{
+    background-color: #111111;
+}

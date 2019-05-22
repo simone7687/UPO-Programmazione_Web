@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <link rel="stylesheet" href="index.css">    <!--CSS-->
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen, print" href="style.css"/>
         <title>Gioco d'azzardo - si può smettere</title>
     </head>
     <body>
         <header>
-            <div style="float: left;">
-                <img src="imgs/logo.jpg" width="200" alt="logo">
-            </div>
-            
-            <h2>DIPENDENZA DA GIOCO D'AZZARDO</h2>
-              
-            <div id="menu-outer">
-                <div class="table">
-                    <ul id="header_navbar">
-                        <li><a href="index.html">Home</a></li>
+            <div id="container">        <!--un po' inutile, ma forse puo' servire dopo-->
+                <div id="header">
+                    <img src="imgs/logo.jpg" width="200" alt="logo" style="float: left">
+                    <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
+                </div>
+                <div id="navbar">
+                    <ul>
+                        <li><a class="active" href="index.html">Home</a></li>
                         <li><a href="stop.html">Smettere</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="map.html">Mappa</a></li>
                         <li><a href="contattaci.html">Contattaci</a></li>
                     </ul>
                 </div>
+                <div id="main"></div>
+                <div id="sidebar"></div>
+                <div id="footer"></div>
             </div>
         </header>
 
