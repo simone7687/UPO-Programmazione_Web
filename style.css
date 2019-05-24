@@ -4,6 +4,12 @@ body
     background-color: white;
 }
 
+h2
+{
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
 #header
 {
     display: flex;
@@ -58,4 +64,11 @@ body
 #navbar ul li a:hover
 {
     background-color: #111111;
+}
+
+#mapid
+{
+    height: 500px;
+    margin-right: 3%;
+    margin-left: 3%;
 }
