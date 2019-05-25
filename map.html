@@ -63,18 +63,15 @@
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
-        function showPosition(position)
+        function showPosition(position)                                                                           //ERRORE PIU VOLTE SCHIACCI PIU PUNTI METTE, SENZA ELIMINARE QUELLO PRECEDENTE
         {
             var youAreHere = L.icon({
                 iconUrl: 'imgs/you_are_here.png',
                 shadowUrl: 'imgs/you_are_here-shadow.png',
-                iconSize:     [25, 25], // size of the icon
+                iconSize:     [25, 25],
                 shadowSize:   [40, 40],
             });
 	        L.marker([position.coords.latitude,position.coords.longitude], {icon: youAreHere}).addTo(mymap).bindPopup("Ti trovi qui");
-
-            //visualizzare posizione
-            //mymap = L.map('mapid').setView([position.coords.latitude,position.coords.longitude], 9);
         }
     </script>
 
