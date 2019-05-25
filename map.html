@@ -41,9 +41,12 @@
                 id: 'mapbox.streets'
             }).addTo(mymap);//collegare al nostro elemento mymap
 
+            
+            //DA PRENDERE DA UN DB?
             L.marker([45.382644,11.038715]).addTo(mymap).bindPopup("Centro dipendenza gioco d'azzardo");
             L.marker([45.046067,7.674174]).addTo(mymap).bindPopup("SSD Disturbo da Gioco d'Azzardo e altre Dipendenze da Comportamenti");
             L.marker([43.801252,11.240413]).addTo(mymap).bindPopup("GIOCATORI ANONIMI FIRENZE - DIPENDENZA GIOCO D'AZZARDO PATOLOGICO");
+            L.marker([45.3275786,8.4223747]).addTo(mymap).bindPopup("Centro di cura mentale VERCELLI");
         </script>
     </div>
 
@@ -54,18 +57,38 @@
     <script>
         function getLocation()
         {
+            //Browser supporta la posizione?
             if (navigator.geolocation) 
             {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
             }
             else
             { 
-                x.innerHTML = "Geolocation is not supported by this browser.";
+                x.innerHTML = "Il browser non supporta la geolocalizzazione";
             }
         }
+
+        //Gestisce gli error della posizione
+        function showError(error) 
+        {
+            switch (error.code) 
+            {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "Il permesso è stato negato."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Impossibile trovare la posizione."
+                    break;
+                case error.TIMEOUT: case error.UNKNOWN_ERROR:
+                    x.innerHTML = "C'è stato un problema con la richiesta della posizione. Riprova."
+                    break;
+            }
+        }
+        
         function showPosition(position)                                                                           //ERRORE PIU VOLTE SCHIACCI PIU PUNTI METTE, SENZA ELIMINARE QUELLO PRECEDENTE
         {
-            var youAreHere = L.icon({
+            var youAreHere = L.icon(
+            {
                 iconUrl: 'imgs/you_are_here.png',
                 shadowUrl: 'imgs/you_are_here-shadow.png',
                 iconSize:     [25, 25],
