@@ -41,10 +41,40 @@
                 id: 'mapbox.streets'
             }).addTo(mymap);//collegare al nostro elemento mymap
 
-            L.marker([45.382644,11.038715]).addTo(mymap);       //marchio
+            L.marker([45.382644,11.038715]).addTo(mymap).bindPopup("Centro dipendenza gioco d'azzardo");
         </script>
     </div>
 
+    <div id="mapid">
+        <button onclick="getLocation()">Trova la tua posizione</button>
+    </div>
+    
+    <script>
+        function getLocation()
+        {
+            if (navigator.geolocation) 
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else
+            { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position)
+        {
+            var youAreHere = L.icon({
+                iconUrl: 'imgs/you_are_here.png',
+                shadowUrl: 'imgs/you_are_here-shadow.png',
+                iconSize:     [25, 25], // size of the icon
+                shadowSize:   [40, 40],
+            });
+	        L.marker([position.coords.latitude,position.coords.longitude], {icon: youAreHere}).addTo(mymap).bindPopup("Ti trovi qui");
+
+            //visualizzare posizione
+            //mymap = L.map('mapid').setView([position.coords.latitude,position.coords.longitude], 9);
+        }
+    </script>
 
         <!-- <footer>
             <p>Copyright 2019</p>
