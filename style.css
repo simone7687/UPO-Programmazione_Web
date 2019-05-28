@@ -4,17 +4,6 @@ body
     background-color: white;
 }
 
-h2
-{
-   
-}
-
-h3
-{
-    margin-right: 3%;
-    margin-left: 3%;
-}
-
 #header
 {
     display: flex;
