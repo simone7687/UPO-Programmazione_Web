@@ -74,10 +74,10 @@ button
     border: none;
     border-radius: 25px;
     cursor: pointer;
-  }
+}
 
 /* Style di input, select e textarea */
-input[type=text], select, textarea 
+input[type=text], select, textarea, input[type=number]
 {
     width: 100%;
     padding: 12px;  
@@ -90,7 +90,8 @@ input[type=text], select, textarea
   }
   
   /* Style tasto submit */
-  input[type=submit] {
+  input[type=submit] 
+  {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -112,4 +113,14 @@ input[type=text], select, textarea
     border-radius: 25px;
     background-color: #f2f2f2;
     padding: 20px;
+  }
+
+  .maintxt
+  {
+    display: block;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 16;
   }
