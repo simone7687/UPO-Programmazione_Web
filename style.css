@@ -79,7 +79,7 @@ button
 /* Style di input, select e textarea */
 input[type=text], select, textarea, input[type=number]
 {
-    width: 100%;
+    width: 80%;
     padding: 12px;  
     border: 1px solid #ccc; 
     border-radius: 25px; 
@@ -88,8 +88,15 @@ input[type=text], select, textarea, input[type=number]
     margin-bottom: 16px; 
     resize: vertical;
     margin-left: 10%;
-    margin-right: 50%;
+    margin-right: 10%;
   }
+
+  label
+  {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
   
   /* Style tasto submit */
   input[type=submit] 
