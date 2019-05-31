@@ -10,7 +10,8 @@ $ris = mysql_select_db($db_name, $db);
 if ($ris == false) die ("Errore nella selezione del database. Verificare i parametri nel file config.php"); 
 
 $sql = "SELECT * FROM punti_incontro WHERE id = 2";
-$result = $db->query($sql);
+$result = mysql_query($sql);
 
-
+$lol = mysql_fetch_array($result);
+echo $lol[nome];
 ?>
