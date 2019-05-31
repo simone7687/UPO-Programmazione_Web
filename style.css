@@ -89,18 +89,18 @@ input[type=text], select, textarea, input[type=number]
     resize: vertical;
     margin-left: 10%;
     margin-right: 10%;
-  }
+}
 
-  label
-  {
+label
+{
     margin-left: 10%;
     margin-right: 10%;
-  }
+}
   
   
-  /* Style tasto submit */
-  input[type=submit] 
-  {
+/* Style tasto submit */
+input[type=submit] 
+{
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -108,29 +108,35 @@ input[type=text], select, textarea, input[type=number]
     border-radius: 25px;
     cursor: pointer;
     margin-left: 10%;
-  }
+}
   
-  input[type=submit]:hover {
+input[type=submit]:hover 
+{
     background-color: #45a049;
-  }
+}
   
-  /* Container */
-  .container 
-  {
+/* Container */
+.container 
+{
     margin-top: 12px;
     margin-right: 3%;
     margin-left: 3%;
     border-radius: 25px;
     background-color: #f2f2f2;
     padding: 20px;
-  }
+}
 
-  .maintxt
-  {
+.maintxt
+{
     display: block;
     margin-top: 3%;
     margin-bottom: 3%;
     margin-left: 10%;
     margin-right: 10%;
     font-size: 16;
-  }
+}
+
+.insights
+{
+  text-align: justify;
+}
