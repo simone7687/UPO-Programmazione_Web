@@ -11,12 +11,14 @@
 body
 {
     background-color: white;
-}
-
-h2
-{
     font-family: 'abeezeeregular'
 }
+
+/* font */
+/* h2, h1, label, #navbar ul a, input[type=text], select, textarea, input[type=number], .maintxt, input[type=submit] 
+{
+    font-family: 'abeezeeregular'
+} */
 
 #header
 {
@@ -31,7 +33,6 @@ h2
 }
 #header h1
 {
-    font-family: 'abeezeeregular';
     font-weight: bold;
     font-style: normal;
     margin-left: 20%;
@@ -70,7 +71,6 @@ h2
     text-align: center;
     padding: 16px;
     text-decoration: none;
-    font-family: 'abeezeeregular' 
 }
 #navbar ul li a:hover
 {
@@ -106,14 +106,12 @@ input[type=text], select, textarea, input[type=number]
     resize: vertical;
     margin-left: 10%;
     margin-right: 10%;
-    font-family: 'abeezeeregular'
 }
 
 label
 {
     margin-left: 10%;
     margin-right: 10%;
-    font-family: 'abeezeeregular'
 }
   
   
@@ -127,7 +125,6 @@ input[type=submit]
     border-radius: 25px;
     cursor: pointer;
     margin-left: 10%;
-    font-family: 'abeezeeregular'
 }
   
 input[type=submit]:hover 
@@ -154,7 +151,6 @@ input[type=submit]:hover
     margin-left: 10%;
     margin-right: 10%;
     font-size: 16;
-    font-family: 'abeezeeregular'
 }
 
 .insights
