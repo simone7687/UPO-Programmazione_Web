@@ -8,7 +8,7 @@
     <body>
         <header>
             <div id="header">
-                <img src="imgs/logo.jpg" width="200" alt="logo" style="float: left">
+                <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
                 <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
             </div>
             <div id="navbar">
@@ -29,13 +29,15 @@
           <p>Ti aiuteremo a trovare le risorse e i punti di incontro di cui hai bisogno.</p>
         </div>
           <div>
-            <form action="/action_page.php">
-              <label for="fname">Nome</label>
-              <input type="text" id="fname" name="name" placeholder="Es. Mario">
+            <form name="contactform" action="/action_page.php" onsubmit="return validateForm()">
+              <label name="namelbl" for="fname">Nome*</label>
+              <input type="text" id="fname" name="fname" placeholder="Es. Mario">
               <label for="lname">Cognome</label>
-              <input type="text" id="lname" name="surname" placeholder="Es. Rossi">
-              <label for="regione">Regione</label>
-              <select id="regione" name="regione">
+              <input type="text" id="lname" name="lname" placeholder="Es. Rossi">
+              <label for="mail">Email</label>
+              <input type="text" id="mail" name="mail" placeholder="m.rossi@mail.it">
+              <label for="regione">Regione*</label>
+              <select id="regione*" name="regione">
                 <option value="abruzzo">Abruzzo</option>
                 <option value="basilicata">Basilicata</option>
                 <option value="calabria">Calabria</option>
@@ -57,12 +59,16 @@
                 <option value="Valle d'Aosta">Valle d'Aosta</option>
                 <option value="Veneto">Veneto</option>
               </select>
-              <label for="contenuto">Contenuto</label>
-              <textarea id="subject" name="subject" placeholder="Descriviti e descrivici il tuo problema." style="height:170px"></textarea>
-              <input type="submit" value="Submit">
+              <label for="phonen">Telefono</label>
+              <input type="text" id="phonen" name="phonen" placeholder="3695691212">
+              <label for="contenuto">Contenuto*</label>
+              <textarea id="contenuto" name="contenuto" placeholder="Descriviti e descrivici il tuo problema." style="height:170px"></textarea>
+              <input type="submit" value="Invia">
             </form>
         </div>
       </div>
+
+
 
 
         <!-- <footer>
@@ -70,3 +76,37 @@
         </footer> -->
     </body>
 </html>
+
+
+<script>
+  //semplice controllo di validità del form
+  function validateForm() 
+  {
+    var regex = /^\(?\d{3}\)?-?\s*-?\d{4}$/;
+    var mail_regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+
+    var nome = document.forms["contactform"]["fname"].value;
+    var contenuto = document.forms["contactform"]["contenuto"].value;
+    if (nome == "" || contenuto == "" || mail == "") 
+    {
+      alert("Uno o più campi obbligatori (*) non sono stati compilati.");
+      if (name == '')
+      return false;
+    }
+
+    if (regex.test(document.forms["contactform"]["phonen"].value) == false)
+    {
+      alert("Il numero di telefono inserito non è valido.");
+      return false;
+    }
+
+    //controllo validità email
+    if (mail_regex.test(document.forms["contactform"]["mail"].value) == false)
+    {
+      alert("La mail inserita non è valida.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
