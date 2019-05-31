@@ -86,7 +86,9 @@ input[type=text], select, textarea, input[type=number]
     box-sizing: border-box; 
     margin-top: 6px; 
     margin-bottom: 16px; 
-    resize: vertical 
+    resize: vertical;
+    margin-left: 10%;
+    margin-right: 50%;
   }
   
   /* Style tasto submit */
