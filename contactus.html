@@ -29,7 +29,7 @@
           <p>Ti aiuteremo a trovare le risorse e i punti di incontro di cui hai bisogno.</p>
         </div>
           <div>
-            <form name="contactform" action="/action_page.php" onsubmit="return validateForm()">
+            <form name="contactform" onsubmit="return validateForm()">
               <label name="namelbl" for="fname">Nome*</label>
               <input type="text" id="fname" name="fname" placeholder="Es. Mario">
               <label for="lname">Cognome</label>
@@ -63,20 +63,20 @@
               <input type="text" id="phonen" name="phonen" placeholder="3695691212">
               <label for="contenuto">Contenuto*</label>
               <textarea id="contenuto" name="contenuto" placeholder="Descriviti e descrivici il tuo problema." style="height:170px"></textarea>
+              <label id="reslbl"></label><br>
               <input type="submit" value="Invia">
             </form>
         </div>
       </div>
 
 
-
-
-        <!-- <footer>
-            <p>Copyright 2019</p>
-        </footer> -->
+      <footer>
+          <div class="container">
+              <p style="text-align: center">Copyright© 2019 - Nome società che non so.</p>
+          </div>
+      </footer>
     </body>
 </html>
-
 
 <script>
   //semplice controllo di validità del form
@@ -89,21 +89,23 @@
     var contenuto = document.forms["contactform"]["contenuto"].value;
     if (nome == "" || contenuto == "" || mail == "") 
     {
-      alert("Uno o più campi obbligatori (*) non sono stati compilati.");
-      if (name == '')
+      document.getElementById("reslbl").style.color = "red";
+      document.getElementById("reslbl").innerHTML = "Uno o più campi obbligatori (*) non sono stati compilati.";
       return false;
     }
 
     if (regex.test(document.forms["contactform"]["phonen"].value) == false)
     {
-      alert("Il numero di telefono inserito non è valido.");
+      document.getElementById("reslbl").style.color = "red";
+      document.getElementById("reslbl").innerHTML = "Il numero di telefono inserito non è valido.";
       return false;
     }
 
     //controllo validità email
     if (mail_regex.test(document.forms["contactform"]["mail"].value) == false)
     {
-      alert("La mail inserita non è valida.");
+      document.getElementById("reslbl").style.color = "red";
+      document.getElementById("reslbl").innerHTML = "La mail inserita non è valida.";
       return false;
     }
 
