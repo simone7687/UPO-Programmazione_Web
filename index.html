@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="imgs/favicon.ico" />
     <link rel="stylesheet" media="screen, print" href="style.css" />
     <title>Gioco d'azzardo - Si può smettere</title>
 </head>
@@ -10,9 +11,8 @@
 <body>
     <header>
         <div id="header">
-                <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
-                <link rel="icon" href="imgs/favicon.ico" />
-                <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
+            <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
+            <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
         </div>
         <div id="navbar">
             <ul>
@@ -35,14 +35,15 @@
                 biglietto costa poco.</p>
         </div>
         <div>
-            <form>
+            <form name="formspesa" onsubmit="return calcolaSpesa()">
                 <label for="nbig">Numero Gratta & Vinci al giorno</label>
-                <input type="number" id="nbig" name="nbig" placeholder="5€">
+                <input type="number" id="nbig" name="nbig" placeholder="5">
                 <label for="prezzo">Costo medio biglietto</label>
-                <input type="number" min="0.00" max="10000.00" step="0.50" placeholder="5€">
+                <input type="number" name="prezzobiglietto" min="0.00" max="10000.00" step="0.50" placeholder="5€">
                 <label for="anni">Da quanti anni giochi?</label>
-                <input type="number" min="1" step="1" placeholder="1">
-                <input type="submit" onclick="" value="Calcola il costo del gioco nella tua vita">
+                <input type="number" min="1" step="1" placeholder="1" name="anni">
+                <label id="reslbl" style="align-content: center"></label><br><br>
+                <input type="submit" value="Calcola il costo del gioco nella tua vita">
             </form>
         </div>
     </div>
@@ -55,3 +56,26 @@
 </body>
 
 </html>
+
+<script>
+function calcolaSpesa()
+{
+    if (document.forms["formspesa"]["nbig"].value != "" && document.forms["formspesa"]["prezzobiglietto"].value != "" && document.forms["formspesa"]["anni"].value)
+    {
+        var ngrattavinci = parseInt(document.forms["formspesa"]["nbig"].value);
+        var prezzo = parseFloat(document.forms["formspesa"]["prezzobiglietto"].value);
+        var anni = parseInt(document.forms["formspesa"]["anni"].value);
+
+        document.getElementById("reslbl").style.color = "red";
+        document.getElementById("reslbl").style.fontSize = 30;
+        document.getElementById("reslbl").innerHTML = ((ngrattavinci * 365) * prezzo)*anni + "€";
+    }
+    else
+    {
+        document.getElementById("reslbl").style.color = "red";
+        document.getElementById("reslbl").innerHTML = "Completa tutti i campi";
+    }
+
+    return false;
+}
+</script>
