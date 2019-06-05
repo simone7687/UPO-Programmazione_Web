@@ -46,6 +46,11 @@
                 <input type="submit" value="Calcola il costo del gioco nella tua vita">
             </form>
         </div>
+
+        <div id="acqdiv" style="display: none; margin-top: 15px;">
+            <label>Con i soldi risparmiati avresti potuto comprare:</label><br><br>
+            <label id="acquisti"></label>
+        </div>
     </div>
 
     <footer>
@@ -66,9 +71,21 @@ function calcolaSpesa()
         var prezzo = parseFloat(document.forms["formspesa"]["prezzobiglietto"].value);
         var anni = parseInt(document.forms["formspesa"]["anni"].value);
 
+        var totanni = ((ngrattavinci * 365) * prezzo)*anni;
+
         document.getElementById("reslbl").style.color = "red";
-        document.getElementById("reslbl").style.fontSize = 30;
-        document.getElementById("reslbl").innerHTML = ((ngrattavinci * 365) * prezzo)*anni + "€";
+        //NON VA
+        // document.getElementById("reslbl").style.fontSize = 40;
+        document.getElementById("reslbl").innerHTML = "Fino ad ora hai speso " + totanni + "€. " + ((ngrattavinci * 365) * prezzo) + "€ in un solo anno!";
+
+        if (totanni < 15000)
+            document.getElementById("acquisti").innerHTML = "Un televisore, anzi molti televisori!"
+        else if (totanni > 15000)
+            document.getElementById("acquisti").innerHTML = "Una FORD FIESTA in " + anni + " anni!"
+        else if (totanni > 25000)
+            document.getElementById("acquisti").innerHTML = "Un'AUDI A1 in " + anni + " anni!"
+
+        document.getElementById("acqdiv").style.display = "block";
     }
     else
     {
