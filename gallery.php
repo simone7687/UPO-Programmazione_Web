@@ -1,6 +1,3 @@
-<!-- La pagina destinata alla visualizzazione degli ingrandimenti, che poi non sono altro che i file originariamente uploddati, 
-permetterà non soltanto di vedere le immagini nelle loro dimensioni reali, ma anche di muoversi tra di esse tramite i classici link 'precedente' e 'successiva' utilizzati 
-solitamente per scorrere le slides -->
 <!DOCTYPE html>
 <html lang="it">
     <head>
@@ -10,10 +7,87 @@ solitamente per scorrere le slides -->
         <title>Gioco d'azzardo - Gallery</title>
     </head>
     <body>
+        <?php
+            @include 'config.php';
+            // recupero i dati dal DB
+            $query = "SELECT * FROM images ORDER By id";
+            $res = mysql_query($query) or die (mysql_error());
+            // numero delle immagini presenti nel DB
+            $n_img = mysql_num_rows($res);
+        ?>
         <header>
             <div id="header">
                 <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
                 <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
+                <style type="text/css">
+                    .showSlide {
+                        display: none
+                    }
+                        .showSlide img {
+                            width: 100%;
+                        }
+                    .slidercontainer {
+                        max-width: 1000px;
+                        position: relative;
+                        margin: auto;
+                    }
+                    .left, .right {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -22px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 18px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                    }
+                    .right {
+                        right: 0;
+                        border-radius: 3px 0 0 3px;
+                    }
+                        .left:hover, .right:hover {
+                            background-color: rgba(115, 115, 115, 0.8);
+                        }
+                    .content {
+                        color: #eff5d4;
+                        font-size: 30px;
+                        padding: 8px 12px;
+                        position: absolute;
+                        top: 10px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    .active {
+                        background-color: #717171;
+                    }
+                    /* Fading animation */
+                    .fade {
+                        -webkit-animation-name: fade;
+                        -webkit-animation-duration: 1.5s;
+                        animation-name: fade;
+                        animation-duration: 1.5s;
+                    }
+                    @-webkit-keyframes fade {
+                        from {
+                            opacity: .4
+                        }
+                        to {
+                            opacity: 1
+                        }
+                    }
+
+                    @keyframes fade {
+                        from {
+                            opacity: .4
+                        }
+                        to {
+                            opacity: 1
+                        }
+                    }
+                </style>
             </div>
             <div id="navbar">
                 <ul>
@@ -26,61 +100,57 @@ solitamente per scorrere le slides -->
                 </ul>
             </div>
         </header>
-        <div class="container">
-            <?php
-                @include 'config.php';
-                // apro la tabella che ci servirà per l'impaginazione
-                echo "<table>";
-
-                // recupero i dati dal DB
-                $query = "SELECT * FROM images ORDER By id";
-                $res = mysql_query($query) or die (mysql_error());
-
-                // numero delle immagini presenti nel DB
-                $n_img = mysql_num_rows($res);
-
-                // verifico che il DB ospiti almeno un'immagine
-                if($n_img >= 1 )
-                {
-                    // stabilisco il numero di riche e colonne della nostra tabella per l'impagninazione
-                    $colonne = 4;
-                    $righe=0;
-
-                    // ciclo tutti i record recuperati attraverso la nostra query
-                    while ($f=@mysql_fetch_array($res))
-                    {
-                        $righe++;
-                        $id = $f['id'];
-                        $titolo = stripslashes($f['titolo']);
-                        $nome = stripslashes($f['nome']);
-                        $descrizione = stripslashes($f['descrizione']);
-
-                        // stampo la cella contenente l'immagine
-                        echo "<td width=\"33%\">\n";
-                        echo $titolo . "<br />";
-                        echo "<a href=\"gallery_visual.php?id=" . $id . "\">";
-                        echo "<img src=\"" . $path_img . "tb_" . $nome . "\" border=\"0\"></a>";
-                        echo "<br />" . $descrizione;
-                        echo "</td>\n";
-
-                        // quando il numero di righe equivale al valore impostato nella variabile $righe
-                        // procedo a chiudere la linea e ad azzerare il valore di $righe
-                        if ($righe == $colonne)
+            <div class="container">
+                <div class="slidercontainer">
+                    <?php
+                        if($n_img >= 1 )
                         {
-                            echo "</tr><tr>\n";
-                            $righe = 0;
+                            while ($f=@mysql_fetch_array($res))
+                            {
+                                $id = $f['id'];
+                                $titolo = stripslashes($f['titolo']);
+                                $nome = stripslashes($f['nome']);
+                                $descrizione = stripslashes($f['descrizione']);
+                                echo "<div class=\"showSlide fade\">";
+                                    echo "<img src=\"gallery/" . $nome . "\" />";
+                                    echo "<div class=\"content\">" . $titolo . "</div>";
+                                echo "</div>";
+                            }
                         }
-                    }
+                        else
+                        {
+                            // stampo un messaggio se il DB è vuoto
+                            echo "Nessuna immagine inserita.";
+                        }
+                    ?>
+                    <!-- navigazione immagini con le frecce -->
+                    <a class="left" onclick="nextSlide(-1)">❮</a>
+                    <a class="right" onclick="nextSlide(1)">❯</a>
+                </div>
+            </div>
+        <script type="text/javascript">
+            var slide_index = 1;
+            displaySlides(slide_index);
+
+            function nextSlide(n) {
+                displaySlides(slide_index += n);
+            }
+
+            function currentSlide(n) {
+                displaySlides(slide_index = n);
+            }
+
+            function displaySlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("showSlide");
+                if (n > slides.length) { slide_index = 1 }
+                if (n < 1) { slide_index = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
                 }
-                else
-                {
-                    // stampo un messaggio se il DB è vuoto
-                    echo "Nessuna immagine inserita.";
-                }
-                @mysql_close($cn);
-                echo "</table>";
-            ?>
-        </div>
+                slides[slide_index - 1].style.display = "block";
+            }
+        </script>
         <footer>
             <div class="container">
                 <p style="text-align: center">Copyright© 2019 - Nome società che non so.</p>
