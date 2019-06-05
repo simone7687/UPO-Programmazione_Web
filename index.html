@@ -80,10 +80,12 @@ function calcolaSpesa()
 
         if (totanni < 15000)
             document.getElementById("acquisti").innerHTML = "Un televisore, anzi molti televisori!"
-        else if (totanni > 15000)
-            document.getElementById("acquisti").innerHTML = "Una FORD FIESTA in " + anni + " anni!"
-        else if (totanni > 25000)
-            document.getElementById("acquisti").innerHTML = "Un'AUDI A1 in " + anni + " anni!"
+        else if (totanni > 15000 && totanni < 25000)
+            document.getElementById("acquisti").innerHTML = "Una <a href='https://www.ford.it'>FORD FIESTA</a> in questi " + anni + " anni!"
+        else if (totanni > 25000 && totanni < 40000)
+            document.getElementById("acquisti").innerHTML = "Un'<a href='https://www.audi.it'>AUDI A1</a> in questi " + anni + " anni!"
+        else if (totanni > 40000)
+            document.getElementById("acquisti").innerHTML = "Una <a href='https://www.tesla.it'>TESLA MODEL 3</a> in questi " + anni + " anni!"
 
         document.getElementById("acqdiv").style.display = "block";
     }
