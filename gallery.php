@@ -33,7 +33,7 @@ solitamente per scorrere le slides -->
                 echo "<table>";
 
                 // recupero i dati dal DB
-                $query = "SELECT * FROM images ORDER By Id";
+                $query = "SELECT * FROM images ORDER By id";
                 $res = mysql_query($query) or die (mysql_error());
 
                 // numero delle immagini presenti nel DB
@@ -50,10 +50,10 @@ solitamente per scorrere le slides -->
                     while ($f=@mysql_fetch_array($res))
                     {
                         $righe++;
-                        $id = $f['Id'];
-                        $titolo = stripslashes($f['Titolo']);
-                        $nome = stripslashes($f['Nome']);
-                        $descrizione = stripslashes($f['Descrizione']);
+                        $id = $f['id'];
+                        $titolo = stripslashes($f['titolo']);
+                        $nome = stripslashes($f['nome']);
+                        $descrizione = stripslashes($f['descrizione']);
 
                         // stampo la cella contenente l'immagine
                         echo "<td width=\"33%\">\n";
