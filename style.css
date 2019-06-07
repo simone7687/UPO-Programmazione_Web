@@ -15,6 +15,8 @@ body
     font-family: 'abeezeeregular'
 }
 
+
+
 /* font */
 /* h2, h1, label, #navbar ul a, input[type=text], select, textarea, input[type=number], .maintxt, input[type=submit] 
 {
@@ -93,6 +95,8 @@ button
     border-radius: 25px;
     cursor: pointer;
 }
+
+
 
 /* Style di input, select e textarea */
 input[type=text], select, textarea, input[type=number]

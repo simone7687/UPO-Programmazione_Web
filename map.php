@@ -22,7 +22,7 @@
                     <li><a href="recognize.html">Sintomi</a></li>
                     <li><a href="stop.html">Smettere</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a class="active" href="map.html">Mappa</a></li>
+                    <li><a class="active" href="map.php">Mappa</a></li>
                     <li><a href="contactus.html">Contattaci</a></li>
                 </ul>
             </div>
@@ -34,26 +34,46 @@
             <p>Incontra chi può capirti e aiutarti. Il primo passo spetta a te.</p>
         </div>
             <div id="mapid">
-                <script>
-                    var mymap = L.map('mapid').setView([44.591949, 9.457293], 8);    //finestra della posizione della mappa
+                <?php        
+                    @include 'config.php';
+
+                    $sql = "SELECT * FROM punti_incontro p JOIN comuni c ON p.id_comune = c.id";
+                    $result = mysql_query($sql);
+                    $num_results = mysql_num_rows($result);
+
+                    $jsmap = "<script>
+                    var mymap = L.map('mapid').setView([44.591949, 9.457293], 6);    //finestra della posizione della mappa
 
                     //Codice JavaScript per creare la mappa
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
                         {
                             maxZoom: 18,
-                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                             id: 'mapbox.streets'
-                        }).addTo(mymap);//collegare al nostro elemento mymap
+                        }).addTo(mymap);
+                        ";
+
+                    
+
+                    for ($i=0; $i < $num_results; $i++)
+                    {
+                        $row = mysql_fetch_array($result);
+                        $str = "L.marker([" . $row[latitudine]. ", " . $row[longitudine] . "]).addTo(mymap).bindPopup('" . $row[nome] . "');
+                        ";
+                        $jsmap .= $str;
+                    }
 
 
-                    //DA PRENDERE DA UN DB?
-                    L.marker([45.382644, 11.038715]).addTo(mymap).bindPopup("Centro dipendenza gioco d'azzardo");
-                    L.marker([45.046067, 7.674174]).addTo(mymap).bindPopup("SSD Disturbo da Gioco d'Azzardo e altre Dipendenze da Comportamenti");
-                    L.marker([43.801252, 11.240413]).addTo(mymap).bindPopup("GIOCATORI ANONIMI FIRENZE - DIPENDENZA GIOCO D'AZZARDO PATOLOGICO");
-                    L.marker([45.3275786, 8.4223747]).addTo(mymap).bindPopup("Centro di cura mentale VERCELLI");
-                </script>
+                    $jsmap .= "</script>
+                    ";
+
+                    // L.marker([45.382644, 11.038715]).addTo(mymap).bindPopup('Centro dipendenza gioco d&#39;azzardo');
+                    // L.marker([45.046067, 7.674174]).addTo(mymap).bindPopup('SSD Disturbo da Gioco d&#39;Azzardo e altre Dipendenze da Comportamenti');
+                    // L.marker([43.801252, 11.240413]).addTo(mymap).bindPopup('GIOCATORI ANONIMI FIRENZE - DIPENDENZA GIOCO D&#39;AZZARDO PATOLOGICO');
+                    // L.marker([45.3275786, 8.4223747]).addTo(mymap).bindPopup('Centro di cura mentale VERCELLI');
+                // </script>";
+
+                print $jsmap;
+                ?>
             </div>
     </div>
     

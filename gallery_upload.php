@@ -37,7 +37,6 @@
                 <?php
                     if(isset($_POST['Submit']))
                     {
-                        // faccio un po' di inclusioni...
                         @include 'config.php';
                         @require 'gallery_function.php';
 
