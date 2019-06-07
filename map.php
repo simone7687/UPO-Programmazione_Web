@@ -66,12 +66,6 @@
                     $jsmap .= "</script>
                     ";
 
-                    // L.marker([45.382644, 11.038715]).addTo(mymap).bindPopup('Centro dipendenza gioco d&#39;azzardo');
-                    // L.marker([45.046067, 7.674174]).addTo(mymap).bindPopup('SSD Disturbo da Gioco d&#39;Azzardo e altre Dipendenze da Comportamenti');
-                    // L.marker([43.801252, 11.240413]).addTo(mymap).bindPopup('GIOCATORI ANONIMI FIRENZE - DIPENDENZA GIOCO D&#39;AZZARDO PATOLOGICO');
-                    // L.marker([45.3275786, 8.4223747]).addTo(mymap).bindPopup('Centro di cura mentale VERCELLI');
-                // </script>";
-
                 print $jsmap;
                 ?>
             </div>
