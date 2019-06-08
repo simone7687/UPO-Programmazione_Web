@@ -57,7 +57,7 @@
                     for ($i=0; $i < $num_results; $i++)
                     {
                         $row = mysql_fetch_array($result);
-                        $str = "L.marker([" . $row[latitudine]. ", " . $row[longitudine] . "]).addTo(mymap).bindPopup('" . $row[nome] . "');
+                        $str = "L.marker([" . $row[latitudine]. ", " . $row[longitudine] . "]).addTo(mymap).bindPopup('" . $row[nome_punti] . " - " . $row[telefono] . "');
                         ";
                         $jsmap .= $str;
                     }
