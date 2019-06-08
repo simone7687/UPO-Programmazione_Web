@@ -74,8 +74,6 @@ function calcolaSpesa()
         var totanni = ((ngrattavinci * 365) * prezzo)*anni;
 
         document.getElementById("reslbl").style.color = "red";
-        //NON VA
-        // document.getElementById("reslbl").style.fontSize = 40;
         document.getElementById("reslbl").innerHTML = "Fino ad ora hai speso " + totanni + "€. " + ((ngrattavinci * 365) * prezzo) + "€ in un solo anno!";
 
         if (totanni < 15000)
