@@ -53,7 +53,6 @@
                         ";
 
                     
-
                     for ($i=0; $i < $num_results; $i++)
                     {
                         $row = mysql_fetch_array($result);
@@ -62,13 +61,39 @@
                         $jsmap .= $str;
                     }
 
-
                     $jsmap .= "</script>
                     ";
 
-                print $jsmap;
+                    print $jsmap;
+
                 ?>
+
             </div>
+
+        <label id="reslbl"></label><br><br>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align:center">Riferimenti</h2>
+        <?php
+            $sql = "SELECT * FROM punti_incontro p JOIN comuni c ON p.id_comune = c.id";
+            $result = mysql_query($sql);
+            $num_results = mysql_num_rows($result);
+
+            $bullp .= "<ul>
+            ";
+            for ($i=0; $i < $num_results; $i++)
+            {
+                $row = mysql_fetch_array($result);
+                $bullp .= "<li><a>" . $row[nome_punti] . ", " . $row[nome] . " - " . $row[telefono] . "</a></li>
+                ";
+            }
+            
+            $bullp .= "</ul>
+            ";
+
+            print $bullp;
+        ?>
     </div>
     
     <script>
@@ -83,7 +108,7 @@
             }
             else
             { 
-                x.innerHTML = "Il browser non supporta la geolocalizzazione";
+                document.getElementById("reslbl").innerHTML = "Il browser non supporta la geolocalizzazione";
             }
         }
 
@@ -93,13 +118,13 @@
             switch (error.code) 
             {
                 case error.PERMISSION_DENIED:
-                    x.innerHTML = "Il permesso è stato negato."
+                    document.getElementById("reslbl").innerHTML = "Impossibile mostrare la tua posizione sulla mappa, il permesso è stato negato."
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Impossibile trovare la posizione."
+                    document.getElementById("reslbl").innerHTML = "Impossibile trovare la posizione."
                     break;
                 case error.TIMEOUT: case error.UNKNOWN_ERROR:
-                    x.innerHTML = "C'è stato un problema con la richiesta della posizione. Riprova."
+                    document.getElementById("reslbl").innerHTML = "C'è stato un problema con la richiesta della posizione. Riprova."
                     break;
             }
         }
