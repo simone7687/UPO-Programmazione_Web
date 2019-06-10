@@ -65,7 +65,7 @@
               <label for="contenuto">Contenuto*</label>
               <textarea id="contenuto" name="contenuto" placeholder="Descriviti e descrivici il tuo problema." style="height:170px"></textarea>
               <label id="reslbl"></label><br>
-              <input type="submit" value="Invia">
+              <input type="submit" value="Invia"> 
             </form>
         </div>
       </div>
@@ -83,7 +83,7 @@
   //semplice controllo di validità del form
   function validateForm() 
   {
-    var regex = /^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/;
+    var regex = /^(\((00|\+)39\)|(00|\+)39)?(38[890]|34[7-90]|36[680]|33[3-90]|32[89])\d{7}$/;
     var mail_regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
 
     var nome = document.forms["contactform"]["fname"].value;
