@@ -23,7 +23,7 @@
                 </ul>
             </div>
         </header>
-        <div class="container">
+        <div id="container">
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>
                 " enctype="multipart/form-data">
                 Titolo:<br />
