@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="recognize.html">Info</a></li>
-                    <li><a href="stop.html">Smettere</a></li>
+                    <!-- <li><a href="stop.html">Smettere</a></li> -->
                     <li><a href="gallery.php">Gallery</a></li>
                     <li><a class="active" href="map.php">Mappa</a></li>
                     <li><a href="contactus.html">Contattaci</a></li>

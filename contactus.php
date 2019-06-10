@@ -16,10 +16,10 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="recognize.html">Info</a></li>
-                    <li><a href="stop.html">Smettere</a></li>
+                    <!-- <li><a href="stop.html">Smettere</a></li> -->
                     <li><a href="gallery.php">Gallery</a></li>
                     <li><a href="map.php">Mappa</a></li>
-                    <li><a class="active" href="contactus.html">Contattaci</a></li>
+                    <li><a class="active" href="contactus.php">Contattaci</a></li>
                 </ul>
             </div>
     </header>
@@ -83,7 +83,7 @@
   //semplice controllo di validità del form
   function validateForm() 
   {
-    var regex = /^\(?\d{3}\)?-?\s*-?\d{4}$/;
+    var regex = /^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$/;
     var mail_regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
 
     var nome = document.forms["contactform"]["fname"].value;
