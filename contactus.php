@@ -24,7 +24,7 @@
             </div>
     </header>
 
-    <div id="container">
+    <div class="container">
         <div style="text-align:center">
           <h2>Contattaci</h2>
           <p>Ti aiuteremo a trovare le risorse e i punti di incontro di cui hai bisogno.</p>

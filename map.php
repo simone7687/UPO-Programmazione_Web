@@ -28,7 +28,7 @@
             </div>
     </header>
 
-    <div id="container">
+    <div class="container">
         <div style="text-align:center">
             <h2>Punti di incontro</h2>
             <p>Incontra chi può capirti e aiutarti. Il primo passo spetta a te.</p>
