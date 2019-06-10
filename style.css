@@ -8,21 +8,14 @@
     font-style: normal;
 }
 
-/* background color */
 body
 {
+    /* background color */
     background-color: white;
     font-family: 'abeezeeregular'
 }
 
-
-
-/* font */
-/* h2, h1, label, #navbar ul a, input[type=text], select, textarea, input[type=number], .maintxt, input[type=submit] 
-{
-    font-family: 'abeezeeregular'
-} */
-
+/* Header */
 #header
 {
     display: flex;
@@ -41,9 +34,9 @@ body
     margin-left: 20%;
 }
 
-/*arrotondato*/
 #navbar
 {
+    /*arrotondato*/
     margin-right: 3%;
     margin-left: 3%;
 }
@@ -57,14 +50,14 @@ body
     overflow: hidden;
     background-color: #333333;
 }
-/* allineamento a sinistra */
 #navbar ul li
 {
+    /* allineamento a sinistra */
     float: left;
 }
-/*attivo*/
 #navbar ul li a.active
 {
+    /*attivo*/
     background-color: #4CAF50;
 }
 #navbar ul a
@@ -80,10 +73,15 @@ body
     background-color: #111111;
 }
 
-#mapid
+/* Container */
+#container 
 {
-    height: 500px;
-    border-radius: 10px;
+    margin-top: 12px;
+    margin-right: 3%;
+    margin-left: 3%;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
 button
@@ -95,8 +93,6 @@ button
     border-radius: 25px;
     cursor: pointer;
 }
-
-
 
 /* Style di input, select e textarea */
 input[type=text], select, textarea, input[type=number]
@@ -118,8 +114,7 @@ label
     margin-left: 10%;
     margin-right: 10%;
 }
-  
-  
+
 /* Style tasto submit */
 input[type=submit] 
 {
@@ -131,23 +126,12 @@ input[type=submit]
     cursor: pointer;
     margin-left: 10%;
 }
-  
 input[type=submit]:hover 
 {
     background-color: #45a049;
 }
-  
-/* Container */
-.container 
-{
-    margin-top: 12px;
-    margin-right: 3%;
-    margin-left: 3%;
-    border-radius: 25px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
 
+/* Frequent classes */
 .maintxt
 {
     display: block;
@@ -163,3 +147,9 @@ input[type=submit]:hover
   text-align: justify;
 }
 
+/* Map */
+#mapid
+{
+    height: 500px;
+    border-radius: 10px;
+}

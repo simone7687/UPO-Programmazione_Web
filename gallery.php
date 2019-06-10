@@ -100,7 +100,7 @@
                 </ul>
             </div>
         </header>
-            <div class="container">
+            <div id="container">
                 <div class="slidercontainer">
                     <?php
                         if($n_img >= 1 )
