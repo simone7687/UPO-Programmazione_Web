@@ -24,7 +24,7 @@
             </div>
     </header>
 
-    <div class="container">
+    <div id="container">
         <div style="text-align:center">
           <h2>Contattaci</h2>
           <p>Ti aiuteremo a trovare le risorse e i punti di incontro di cui hai bisogno.</p>
@@ -72,7 +72,7 @@
 
 
       <footer>
-          <div class="container">
+          <div id="container">
               <p style="text-align: center">Copyright© 2019 - Nome società che non so.</p>
           </div>
       </footer>

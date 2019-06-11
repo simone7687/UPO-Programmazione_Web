@@ -23,12 +23,12 @@
                     <!-- <li><a href="stop.html">Smettere</a></li> -->
                     <li><a href="gallery.php">Gallery</a></li>
                     <li><a class="active" href="map.php">Mappa</a></li>
-                    <li><a href="contactus.html">Contattaci</a></li>
+                    <li><a href="contactus.php">Contattaci</a></li>
                 </ul>
             </div>
     </header>
 
-    <div class="container">
+    <div id="container">
         <div style="text-align:center">
             <h2>Punti di incontro</h2>
             <p>Incontra chi può capirti e aiutarti. Il primo passo spetta a te.</p>
@@ -73,7 +73,7 @@
         <label id="reslbl"></label><br><br>
     </div>
 
-    <div class="container">
+    <div id="container">
         <h2 style="text-align:center">Riferimenti</h2>
         <?php
             $sql = "SELECT * FROM punti_incontro p JOIN comuni c ON p.id_comune = c.id";

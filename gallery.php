@@ -100,7 +100,7 @@
                 </ul>
             </div>
         </header>
-            <div class="container">
+            <div id="container">
                 <div class="slidercontainer">
                     <?php
                         if($n_img >= 1 )
@@ -152,7 +152,7 @@
             }
         </script>
         <footer>
-            <div class="container">
+            <div id="container">
                 <p style="text-align: center">Copyright© 2019 - Nome società che non so.</p>
             </div>
         </footer>
