@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="icon" href="imgs/favicon.ico" />
         <link rel="stylesheet" media="screen, print" href="style.css"/>
+        <link rel="stylesheet" media="screen, print" href="style.css"/>
         <title>Gioco d'azzardo - Gallery</title>
     </head>
     <body>
@@ -19,89 +20,20 @@
             <div id="header">
                 <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
                 <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
-                <style type="text/css">
-                    .showSlide {
-                        display: none
-                    }
-                        .showSlide img {
-                            width: 100%;
-                        }
-                    .slidercontainer {
-                        max-width: 1000px;
-                        position: relative;
-                        margin: auto;
-                    }
-                    .left, .right {
-                        cursor: pointer;
-                        position: absolute;
-                        top: 50%;
-                        width: auto;
-                        padding: 16px;
-                        margin-top: -22px;
-                        color: white;
-                        font-weight: bold;
-                        font-size: 18px;
-                        transition: 0.6s ease;
-                        border-radius: 0 3px 3px 0;
-                    }
-                    .right {
-                        right: 0;
-                        border-radius: 3px 0 0 3px;
-                    }
-                        .left:hover, .right:hover {
-                            background-color: rgba(115, 115, 115, 0.8);
-                        }
-                    .content {
-                        color: #eff5d4;
-                        font-size: 30px;
-                        padding: 8px 12px;
-                        position: absolute;
-                        top: 10px;
-                        width: 100%;
-                        text-align: center;
-                    }
-                    .active {
-                        background-color: #717171;
-                    }
-                    /* Fading animation */
-                    .fade {
-                        -webkit-animation-name: fade;
-                        -webkit-animation-duration: 1.5s;
-                        animation-name: fade;
-                        animation-duration: 1.5s;
-                    }
-                    @-webkit-keyframes fade {
-                        from {
-                            opacity: .4
-                        }
-                        to {
-                            opacity: 1
-                        }
-                    }
-
-                    @keyframes fade {
-                        from {
-                            opacity: .4
-                        }
-                        to {
-                            opacity: 1
-                        }
-                    }
-                </style>
             </div>
             <div id="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="recognize.html">Info</a></li>
                     <!-- <li><a href="stop.html">Smettere</a></li> -->
-                    <li><a class="active" href="gallery.html">Gallery</a></li>
+                    <li><a class="active" href="gallery.php">Gallery</a></li>
                     <li><a href="map.php">Mappa</a></li>
                     <li><a href="contactus.php">Contattaci</a></li>
                 </ul>
             </div>
         </header>
             <div id="container">
-                <div class="slidercontainer">
+                <div id="slidercontainer">
                     <?php
                         if($n_img >= 1 )
                         {

@@ -17,7 +17,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="recognize.html">Sintomi</a></li>
                     <li><a href="stop.html">Smettere</a></li>
-                    <li><a class="active" href="gallery.html">Gallery</a></li>
+                    <li><a class="active" href="gallery.php">Gallery</a></li>
                     <li><a href="map.html">Mappa</a></li>
                     <li><a href="contactus.html">Contattaci</a></li>
                 </ul>
