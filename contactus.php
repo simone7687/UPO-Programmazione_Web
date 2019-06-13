@@ -73,7 +73,7 @@
 
       <footer>
           <div id="container">
-              <p style="text-align: center">Copyright© 2019 - Nome società che non so.</p>
+              <p style="text-align: center">Copyright© 2019 - Bast'azzardo</p>
           </div>
       </footer>
     </body>
