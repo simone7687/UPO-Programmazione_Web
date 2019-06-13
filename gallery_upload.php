@@ -78,20 +78,10 @@
                         else
                         {
                             // Stampo a video un po' di informazioni
-                            echo "<div style=\"display: none; margin-top: 15px;\">"
-                                echo "Nome: ".$_FILES['imagefile']['name']."<br />"; 
                             echo "Nome: ".$_FILES['imagefile']['name']."<br />"; 
-                                echo "Nome: ".$_FILES['imagefile']['name']."<br />"; 
-                                echo "Dimensione: ".$_FILES['imagefile']['size']."<br />"; 
                             echo "Dimensione: ".$_FILES['imagefile']['size']."<br />"; 
-                                echo "Dimensione: ".$_FILES['imagefile']['size']."<br />"; 
-                                echo "Tipo: ".$_FILES['imagefile']['type']."<br />"; 
                             echo "Tipo: ".$_FILES['imagefile']['type']."<br />"; 
-                                echo "Tipo: ".$_FILES['imagefile']['type']."<br />"; 
-                                echo "Copia eseguita con successo.";
-                            echo "Copia eseguita con successo."; 
-                                echo "Copia eseguita con successo.";
-                            echo "<div>"
+                            echo "Copia eseguita con successo.";
                         }
                     } 
                 ?>
