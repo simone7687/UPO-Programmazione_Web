@@ -30,7 +30,7 @@
           <p>Ti aiuteremo a trovare le risorse e i punti di incontro di cui hai bisogno.</p>
         </div>
           <div>
-            <form name="contactform" onsubmit="return validateForm()">
+            <form name="contactform" onsubmit="return validateForm()" method="POST" action="contactus.php">
               <label name="namelbl" for="fname">Nome*</label>
               <input type="text" id="fname" name="fname" placeholder="Es. Mario">
               <label for="lname">Cognome</label>
@@ -79,8 +79,22 @@
     </body>
 </html>
 
+<?php
+  if(isset($_POST['mail']))
+  {
+    mail(
+      'testmail@something.it',
+      'Contatto da sito web',
+      $_POST["fname"] . $_POST["lname"] . ' - ' . $_POST["phonen"] . ' - ' .  $_POST["regione"] . "\n\n" . $_POST["contenuto"] . "\n\n" . $_POST["mail"],
+      'From: ' . $_POST["fname"] . ' '  . $_POST["lname"]
+    );
+  }
+
+
+?>
+
 <script>
-  //semplice controllo di validità del form
+  //semplice controllo di validità del form, client-side
   function validateForm() 
   {
     var regex = /^(\((00|\+)39\)|(00|\+)39)?(38[890]|34[7-90]|36[680]|33[3-90]|32[89])\d{7}$/;
@@ -110,6 +124,7 @@
       return false;
     }
 
+    document.getelement(form).submit()
     return true;
   }
 </script>
