@@ -32,6 +32,8 @@
                 " enctype="multipart/form-data">
                 Titolo:<br />
                 <input name="titolo" type="text" size="20"><br />
+                Descrizione:<br />
+                <input name="descrizione" type="text" size="20"><br />
                 Immagine:<br />
                 <input type="file" name="imagefile"><br />
                 <input type="submit" name="Submit" value="Submit">
@@ -63,10 +65,11 @@
                         // recupero i dati dal form
                         $titolo = @addslashes($_POST['titolo']);
                         $nome = @addslashes($_FILES['imagefile']['name']);
+                        $descrizione = @addslashes($_POST['descrizione']);
                         $path = $path_img . stripslashes($nome);
                         $tipo = @addslashes($_FILES['imagefile']['type']);
                         // aggiorno il database
-                        $query = "INSERT INTO images (Titolo,Nome,Tipo) VALUES('$titolo','$nome','$tipo')";
+                        $query = "INSERT INTO images (Titolo,Nome,Tipo) VALUES('$titolo','$nome','$descrizione','$tipo')";
                         $res = @mysql_query($query) or die (mysql_error());
                         @mysql_close($cn);
                         

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <link rel="icon" href="imgs/favicon.ico" />
         <link rel="stylesheet" media="screen, print" href="style.css"/>
-        <link rel="stylesheet" media="screen, print" href="style.css"/>
+        <link rel="stylesheet" media="screen, print" href="gallery.css"/>
         <title>Gioco d'azzardo - Gallery</title>
     </head>
     <body>
@@ -41,11 +41,12 @@
                             {
                                 $id = $f['id'];
                                 $titolo = stripslashes($f['titolo']);
+                                $descrizione = stripslashes($f['descrizione']);
                                 $nome = stripslashes($f['nome']);
                                 $descrizione = stripslashes($f['descrizione']);
                                 echo "<div class=\"showSlide fade\">";
                                     echo "<img src=\"gallery/" . $nome . "\" />";
-                                    echo "<div class=\"content\">" . $titolo . "</div>";
+                                    echo "<div class=\"content\">" . $titolo . ':   ' . $descrizione . "</div>";
                                 echo "</div>";
                             }
                         }
