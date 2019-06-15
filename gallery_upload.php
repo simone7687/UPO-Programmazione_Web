@@ -2,6 +2,7 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
+        <meta name="robots" content="noindex" />
         <link rel="icon" href="imgs/favicon.ico" />
         <link rel="stylesheet" media="screen, print" href="style.css"/>
         <title>Gioco d'azzardo - Gallery</title>
