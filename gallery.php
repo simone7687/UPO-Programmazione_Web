@@ -35,7 +35,7 @@
             <div id="container">
                 <div id="slidercontainer">
                     <?php
-                        if($n_img >= 1 )
+                        if($n_img >= 1)
                         {
                             while ($f=@mysql_fetch_array($res))
                             {

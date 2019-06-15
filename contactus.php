@@ -89,8 +89,6 @@
       'From: ' . $_POST["fname"] . ' '  . $_POST["lname"]
     );
   }
-
-
 ?>
 
 <script>
