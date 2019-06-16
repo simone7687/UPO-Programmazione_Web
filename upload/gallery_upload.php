@@ -41,7 +41,7 @@
                 <?php
                     if(isset($_POST['Submit']))
                     {
-                        @include 'config.php';
+                        @include '../config.php';
                         // Cartella fisica in cui andremo ad inserire le immagini
                         $path_img = '../gallery/';
 
