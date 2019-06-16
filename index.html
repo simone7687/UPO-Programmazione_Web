@@ -1,9 +1,101 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <title>GIOCO D'AZZARDO</title>
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="imgs/favicon.ico" />
+    <link rel="stylesheet" media="screen, print" href="style.css" />
+    <title>Gioco d'azzardo - Si può smettere</title>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
+            <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="recognize.html">Info</a></li>
+                <!-- <li><a href="stop.html">Smettere</a></li> -->
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="map.php">Mappa</a></li>
+                <li><a href="contactus.php">Contattaci</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="container">
+        <div style="text-align:center">
+            <p class="maintxt">Il gioco d'azzardo, secondo l'ordinamento penale italiano, è una tipologia di gioco nel quale ricorre il fine di lucro e la vincita o perdita è completamente o quasi aleatoria.<br><br> Il gioco d'azzardo può diventare una vera e propria patologia, detta gioco d'azzardo patologico, diagnosticabile e curabile attraverso un'adeguata psicoterapia. Questa patologia spinge a giocare in maniera compulsiva, per vivere l'eccitazione del rischio, che spesso è tanto più forte quanto più alta è la posta: anche se le persone sanno come funziona il mondo del gioco d'azzardo, continuano a giocare senza riuscire a fermarsi, che stiano vincendo o perdendo, finché non hanno perso tutto. Per questo spesso si ritiene che il malato di gioco d'azzardo non giochi per vincere, ma per perdere.</p>
+            <h2>Affronta la realtà, quanto spendi?</h2>
+            <p class="maintxt">Lotto, superenalotto, "Gratta e Vinci", Slot Machine e biglietti di Lotterie vendono
+                illusioni, fumo e sogni. Si gioca da anni, non si vince o si vince poco, ma la speranza di un biglietto
+                vincente continua senza mai diminuire. Non impressionano le somme di denaro già spese, perché il
+                biglietto costa poco.</p>
+        </div>
+        <div>
+            <form name="formspesa" onsubmit="return calcolaSpesa()" method="POST">
+                <label for="nbig">Numero Gratta & Vinci al giorno</label>
+                <input type="number" id="nbig" name="nbig" placeholder="5">
+                <label for="prezzo">Costo medio biglietto</label>
+                <input type="number" name="prezzobiglietto" min="0.00" max="10000.00" step="0.50" placeholder="5€">
+                <label for="anni">Da quanti anni giochi?</label>
+                <input type="number" min="1" step="1" placeholder="1" name="anni">
+                <label id="reslbl" style="align-content: center"></label><br><br>
+                <input type="submit" value="Calcola il costo del gioco nella tua vita">
+            </form>
+        </div>
+
+        <div id="acqdiv" style="display: none; margin-top: 15px;">
+            <label>Con i soldi risparmiati avresti potuto comprare:</label><br><br>
+            <label id="acquisti"></label>
+        </div>
+    </div>
+
+    <footer>
+        <div id="container">
+            <p style="text-align: center">Copyright© 2019 - Bast'azzardo</p>
+        </div>
+    </footer>
+</body>
+
 </html>
+
+<script>
+function calcolaSpesa()
+{
+    if (document.forms["formspesa"]["nbig"].value != "" && document.forms["formspesa"]["prezzobiglietto"].value != "" && document.forms["formspesa"]["anni"].value)
+    {
+        var ngrattavinci = parseInt(document.forms["formspesa"]["nbig"].value);
+        var prezzo = parseFloat(document.forms["formspesa"]["prezzobiglietto"].value);
+        var anni = parseInt(document.forms["formspesa"]["anni"].value);
+
+        var totanni = ((ngrattavinci * 365) * prezzo)*anni;
+
+        document.getElementById("reslbl").style.color = "red";
+        document.getElementById("reslbl").innerHTML = "Fino ad ora hai speso " + totanni + "€. " + ((ngrattavinci * 365) * prezzo) + "€ in un solo anno!";
+
+        if (totanni < 15000)
+            document.getElementById("acquisti").innerHTML = "Un televisore, anzi molti televisori!"
+        else if (totanni > 15000 && totanni < 25000)
+            document.getElementById("acquisti").innerHTML = "Una <a href='https://www.ford.it'>FORD FIESTA</a> in questi " + anni + " anni!"
+        else if (totanni > 25000 && totanni < 40000)
+            document.getElementById("acquisti").innerHTML = "Un'<a href='https://www.audi.it'>AUDI A1</a> in questi " + anni + " anni!"
+        else if (totanni > 40000 && totanni < 80000)
+            document.getElementById("acquisti").innerHTML = "Una <a href='https://www.tesla.com/it_IT/'>TESLA MODEL 3</a> in questi " + anni + " anni!"
+        else if (totanni > 80000)
+            document.getElementById("acquisti").innerHTML = "Una <a href='https://www.tesla.com/it_IT/'>TESLA MODEL S</a> in questi " + anni + " anni!"
+
+        document.getElementById("acqdiv").style.display = "block";
+    }
+    else
+    {
+        document.getElementById("reslbl").style.color = "red";
+        document.getElementById("reslbl").innerHTML = "Completa tutti i campi";
+    }
+
+    return false;
+}
+</script>

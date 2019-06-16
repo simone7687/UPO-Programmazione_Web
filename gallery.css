@@ -1,0 +1,85 @@
+@-webkit-keyframes fade 
+{
+    from 
+    {
+        opacity: .4
+    }
+    to 
+    {
+        opacity: 1
+    }
+}
+@keyframes fade 
+{
+    from 
+    {
+        opacity: .4
+    }
+    to 
+    {
+        opacity: 1
+    }
+}
+#slidercontainer
+{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+#slidercontainer .showSlide
+{
+    display: none
+}
+#slidercontainer .showSlide img
+{
+    width: 100%;
+}
+#slidercontainer .left, .right 
+{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+#slidercontainer .right 
+{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+#slidercontainer .left:hover, .right:hover 
+{
+    background-color: rgba(115, 115, 115, 0.8);
+}
+#slidercontainer .content 
+{
+    color: white;
+    /* testo bordi neri */
+    background-color: black;
+    opacity: 0.5;
+    /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 10px;
+    width: 97.5%;
+    text-align: center;
+}
+#slidercontainer .active 
+{
+    background-color: #717171;
+}
+/* Fading animation */
+#slidercontainer .fade 
+{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /imgs/
+Disallow: /gallery/
+Disallow: /font/
+
+Sitemap: https://pweb1819massaros.altervista.org/progetto/sitemap.xml

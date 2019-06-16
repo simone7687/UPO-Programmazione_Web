@@ -1,0 +1,9 @@
+
+# av:Auth
+AuthType Basic
+AuthName reserved_area
+AuthUserFile "/membri/pweb1819massaros/upload/.htpasswd"
+<Limit GET POST>
+require valid-user
+</Limit> 
+# Auth
