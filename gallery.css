@@ -59,14 +59,16 @@
 }
 #slidercontainer .content 
 {
-    color: #eff5d4;
+    color: white;
     /* testo bordi neri */
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    background-color: black;
+    opacity: 0.5;
+    /* text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
     font-size: 30px;
     padding: 8px 12px;
     position: absolute;
     top: 10px;
-    width: 100%;
+    width: 97.5%;
     text-align: center;
 }
 #slidercontainer .active 
