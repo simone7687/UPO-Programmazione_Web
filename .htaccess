@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^pweb1819massaros\.altervista\.org [NC,OR]
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteRule ^ https://pweb1819massaros.altervista.org%{REQUEST_URI} [NE,R=301,L] 
