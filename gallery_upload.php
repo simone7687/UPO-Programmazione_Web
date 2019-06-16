@@ -69,7 +69,7 @@
                         $path = $path_img . stripslashes($nome);
                         $tipo = @addslashes($_FILES['imagefile']['type']);
                         // aggiorno il database
-                        $query = "INSERT INTO images (Titolo,Nome,Tipo) VALUES('$titolo','$nome','$descrizione','$tipo')";
+                        $query = "INSERT INTO images (Titolo,Nome,Descrizione,Tipo) VALUES('$titolo','$nome','$descrizione','$tipo')";
                         $res = @mysql_query($query) or die (mysql_error());
                         @mysql_close($cn);
                         
