@@ -3,24 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="robots" content="noindex" />
-        <link rel="icon" href="imgs/favicon.ico" />
-        <link rel="stylesheet" media="screen, print" href="style.css"/>
+        <link rel="icon" href="../imgs/favicon.ico" />
+        <link rel="stylesheet" media="screen, print" href="../style.css"/>
         <title>Gioco d'azzardo - Gallery</title>
     </head>
     <body>
         <header>
             <div id="header">
-                <a href="index.html"><img src="imgs/logo.jpg" width="200" alt="logo"></a>
+                <a href="../index.html"><img src="../imgs/logo.jpg" width="200" alt="logo"></a>
                 <h1>DIPENDENZA DA GIOCO D'AZZARDO</h1>
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="recognize.html">Info</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../recognize.html">Info</a></li>
                     <!-- <li><a href="stop.html">Smettere</a></li> -->
-                    <li><a class="active" href="gallery.php">Gallery</a></li>
-                    <li><a href="map.php">Mappa</a></li>
-                    <li><a href="contactus.php">Contattaci</a></li>
+                    <li><a class="active" href="../gallery.php">Gallery</a></li>
+                    <li><a href="../map.php">Mappa</a></li>
+                    <li><a href="../contactus.php">Contattaci</a></li>
                 </ul>
             </div>
         </header>
