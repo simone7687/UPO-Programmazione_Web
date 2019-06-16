@@ -43,7 +43,7 @@
                     {
                         @include 'config.php';
                         // Cartella fisica in cui andremo ad inserire le immagini
-                        $path_img = 'gallery/';
+                        $path_img = '../gallery/';
 
                         // Verificare che l'upload non sovrascriva altro file
                         $target_file = $path_img . $_FILES['imagefile']['name'];
